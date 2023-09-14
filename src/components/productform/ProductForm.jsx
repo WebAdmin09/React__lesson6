@@ -1,7 +1,7 @@
 import style from './ProductForm.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Row, Button } from 'react-bootstrap';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Added from '../added/Added';
 import { category } from '../categoriesData';
 
@@ -23,7 +23,15 @@ const ProductForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form submitted:", formData);
+        localStorage.setItem('formData', JSON.stringify(formData));
     };
+
+    useEffect(() => {
+        const savedFormData = localStorage.getItem('formData');
+        if (savedFormData) {
+            setFormData(JSON.parse(savedFormData));
+        }
+    }, []);
 
     return (
         <div className={style['some']}>

@@ -2,7 +2,8 @@
     background-color: rgb(244, 242, 242);
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: start;
+    flex-direction: column;
     min-height: 440px;
     margin-left: -250px;
     padding: 20px;
@@ -11,12 +12,29 @@
 
 .product__added-navbar {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: start;
+    column-gap: 50px;
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+}
+
+.product__btn {
+    margin-top: 50px;
+}
+
+.product__added-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    column-gap: 50px;
+    margin-top: 10px;
+}
+.added__item{
+    display: flex;
+    align-items: flex-start;
     justify-content: center;
     column-gap: 50px;
     color: black;
     margin-top: 10px;
-}
-.product__btn{
-    margin-top: 50px;
 }
